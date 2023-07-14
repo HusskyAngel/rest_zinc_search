@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  zinc:
+    image: public.ecr.aws/zinclabs/zincsearch:0.4.6
+    container_name: zinc
+    env_file: 
+      - .env
+    environment:
+      - DATA_PATH
+      - ZINC_FIRST_ADMIN_USER
+      - ZINC_FIRST_ADMIN_PASSWORD
+      - TOKEN
+    ports:
+      - 4080:4080
+    volumes:
+      - ./zincsearcher/data:/home/data
+    restart: always
