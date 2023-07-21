@@ -31,6 +31,7 @@ func MReader(path string) Email{
   email.date=msg.Header.Get("Date")
   email.from=msg.Header.Get("From")
   email.to=msg.Header.Get("To")
+	email.cc=msg.header.Get
   email.subject=msg.Header.Get("Subject")
 
   body,errB:=ioutil.ReadAll(msg.Body)
