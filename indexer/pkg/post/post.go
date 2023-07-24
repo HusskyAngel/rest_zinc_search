@@ -10,7 +10,7 @@ import (
 	"github.com/joho/godotenv"
 )
   
-func PostEmail(data string, index string) {
+func PostEmail(data string) {
   err := godotenv.Load()
   if err!=nil {
     log.Fatal("error loading .env file")

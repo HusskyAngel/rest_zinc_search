@@ -1,23 +1,21 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
-	"log"
-	"os"
 
-	"github.com/HusskyAngel/ZincIndexer/pkg/stack"
+	"github.com/HusskyAngel/ZincIndexer/pkg/mreader"
 )
 
 func main() {
 
-  if len(os.Args)<2 {
-    log.Fatal("Non folder for load specified")
-  }
+  const path string="/home/HusskyAngel/Descargas/enron_mail_20110402/maildir/buy-r/sent/1."
 
-  s:=stack.Stack{}
-  s.Push(1)
-  s.Push(2)
-  s.Pop()
-  fmt.Println(s.GetTop())
+  result:=mreader.EReader(path)
+  json,err:=json.Marshal(result)
+  if err!=nil{
+    fmt.Println("error transformando a json")
+  }
+  fmt.Println(string(json))
   
 }
