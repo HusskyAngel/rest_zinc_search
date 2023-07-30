@@ -1,0 +1,5 @@
+
+enron_data="/home/HusskyAngel/Descargas/enron_mail_20110402/maildir/"
+admin_user="admin"
+admin_password="Complexpass#123"
+url="http://localhost:4080/api/email/_doc"

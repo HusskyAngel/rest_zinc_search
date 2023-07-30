@@ -1,4 +1,4 @@
-package mreader
+package mailreader
 
 type Email struct {
   MessageId               string `json:"Message-Id"`
