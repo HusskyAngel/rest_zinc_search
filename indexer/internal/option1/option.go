@@ -7,12 +7,20 @@ import (
 )
 
 
-
-
 //push onto the stack
 func doOption1(filePath string ) {
   optionutils.PStack().Push(filePath)
 }
+
+func orchestator(){
+  for{
+    select{
+
+
+    }
+  }  
+}
+
 
 func Option1() {
   enronData:=config.GetConfig().EnronDataPath
