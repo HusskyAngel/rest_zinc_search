@@ -3,11 +3,11 @@ package main
 import (
 	"log"
 	"os"
-	"runtime"
 
 	"github.com/HusskyAngel/ZincIndexer/config"
 	"github.com/HusskyAngel/ZincIndexer/internal/option1"
 	"github.com/HusskyAngel/ZincIndexer/internal/option2"
+	"github.com/HusskyAngel/ZincIndexer/internal/optionutils"
 )
 
 
@@ -35,8 +35,8 @@ func main() {
   
   }else if os.Args[1]=="3" {
 
-    numCores := runtime.NumCPU()
-    log.Printf("Number of CPU cores: %d\n", numCores)
+    optionutils.SafeAccessStack().Stack.Push("Hola")
+    log.Println(optionutils.SafeAccessStack().Stack.GetTop())
 
   }else{
 

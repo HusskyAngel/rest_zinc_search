@@ -6,16 +6,26 @@ import (
 	"github.com/HusskyAngel/ZincIndexer/pkg/stack"
 )
 
+type sharedStack struct{ 
+   sync.RWMutex
+   Stack stack.Stack
+}
+
+
 //stack of paths
 var (
-  pstack *stack.Stack 
+  saStack *sharedStack
   once   sync.Once  
 )
 
 //get a singleton stack of paths 
-func PStack() *stack.Stack{
+func SafeAccessStack() *sharedStack{
   once.Do(func(){
-    pstack=&stack.Stack{}
+    saStack=&sharedStack{}
   })
-  return pstack
-}
+  return saStack
+} 
+
+
+
+
