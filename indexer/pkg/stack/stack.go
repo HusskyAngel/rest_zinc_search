@@ -28,5 +28,5 @@ func (s *Stack) Pop() interface{}{
 
 // Get top element from the stack
 func (s *Stack) GetTop() interface{}{
-  return (*s)[len(*s)-1]
+  if s.isEmpty(){return nil} else {return (*s)[len(*s)-1]}
 }

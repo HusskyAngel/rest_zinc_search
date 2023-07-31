@@ -1,7 +1,21 @@
-package option1 
+package option1
+
+import (
+	"github.com/HusskyAngel/ZincIndexer/config"
+	"github.com/HusskyAngel/ZincIndexer/internal/optionutils"
+	"github.com/HusskyAngel/ZincIndexer/pkg/pathsgetter"
+)
 
 
-func Option1(){
-    
+
+
+//push onto the stack
+func doOption1(filePath string ) {
+  optionutils.PStack().Push(filePath)
+}
+
+func Option1() {
+  enronData:=config.GetConfig().EnronDataPath
+  pathsgetter.PathsGetter(enronData,doOption1)
 
 }

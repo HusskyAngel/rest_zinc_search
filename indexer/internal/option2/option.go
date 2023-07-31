@@ -13,16 +13,12 @@ func doOption2(filePath string){
 
   mail,errM:=mailreader.Reader(filePath)
   if errM!= nil{
-
     log.Println("Error: ", filePath, errM)  
-
   }else{
-
     errP:=post.PostEmail(mail)
     if errP!=nil{
       log.Println("Error: ",errP)
     }
-     
   }
 
 }

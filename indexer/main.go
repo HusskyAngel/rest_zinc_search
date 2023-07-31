@@ -3,6 +3,7 @@ package main
 import (
 	"log"
 	"os"
+	"runtime"
 
 	"github.com/HusskyAngel/ZincIndexer/config"
 	"github.com/HusskyAngel/ZincIndexer/internal/option1"
@@ -32,6 +33,11 @@ func main() {
 
     option2.Option2()
   
+  }else if os.Args[1]=="3" {
+
+    numCores := runtime.NumCPU()
+    log.Printf("Number of CPU cores: %d\n", numCores)
+
   }else{
 
     log.Fatal("The option "+ os.Args[1]+ " doesnt exist"+
