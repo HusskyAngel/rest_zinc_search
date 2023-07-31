@@ -29,7 +29,7 @@ func PostEmail(data string) error {
     return err
   }
 	defer resp.Body.Close()
-  log.Println(resp.StatusCode)
+  //log.Println(resp.StatusCode)
 
   return nil
 }
